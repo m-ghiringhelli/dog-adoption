@@ -11,6 +11,11 @@ export default function Header() {
             Home
           </NavLink>
         </li>
+        <li>
+          <NavLink to='/admin'>
+            Admin
+          </NavLink>
+        </li>
       </ul>
     </header>
   );
