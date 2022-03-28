@@ -7,14 +7,15 @@ export default function DogDetail() {
   const [dog, setDog] = useState();
   
   useEffect(() => {
-    fetchDogById(id).then(({ data }) => setDog(data));
+    fetchDogById(id).then((data) => setDog(data));
   }, [id]);
+
 
   return (
     <div>
-      <h1>Dog name</h1>
-      <img />
-      <p>Dog bio</p>
+      <h1>{dog.name}</h1>
+      <img src={dog.image}/>
+      <p>{dog.bio}</p>
     </div>
   );
 }
