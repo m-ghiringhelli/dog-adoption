@@ -1,7 +1,7 @@
 import React from 'react';
 import './DogForm.css';
 
-export default function DogForm({ dog, setDog }) {
+export default function DogForm({ dog, setDog, handleSubmit }) {
   const updateDog = (attribute, value) => {
     const newDog = { ...dog, [attribute]: value };
     setDog(newDog);
@@ -9,7 +9,7 @@ export default function DogForm({ dog, setDog }) {
   return (
     <div>
       <h1>Add a Dog</h1>
-      <form className='dogForm'>
+      <form className='dogForm' onSubmit={handleSubmit}>
         <label>
           Name:
           <input type='text' value={dog.name} onChange={(e) => updateDog('name', e.target.value)} />
@@ -19,7 +19,7 @@ export default function DogForm({ dog, setDog }) {
           <input type='text' value={dog.image} onChange={(e) => updateDog('image', e.target.value)} />
         </label>
         <label>
-          Name:
+          Breed:
           <input type='text' value={dog.breed} onChange={(e) => updateDog('breed', e.target.value)} />
         </label>
         <label>

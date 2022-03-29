@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { fetchDogById } from '../../services/dogs';
+import { fetchDogById, removeDog } from '../../services/dogs';
 
 export default function DogDetail() {
   const id = useParams().id;
@@ -21,6 +21,7 @@ export default function DogDetail() {
       <h1>{dog.name}</h1>
       <img src={dog.image}/>
       <p>{dog.bio}</p>
+      <button onClick={removeDog(id)}>Delete</button>
     </div>
   );
 }
