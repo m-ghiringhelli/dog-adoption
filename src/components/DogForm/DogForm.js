@@ -8,7 +8,6 @@ export default function DogForm({ dog, setDog, handleSubmit }) {
   };
   return (
     <div>
-      <h1>Add a Dog</h1>
       <form className='dogForm' onSubmit={handleSubmit}>
         <label>
           Name:

@@ -17,7 +17,7 @@ export default function Admin() {
       setSuccess(true);
       setTimeout(() => {
         history.push('../');
-      }, 1000);
+      }, 500);
     } catch (e) {
       setError('trouble adding your dog');
     }
@@ -26,6 +26,7 @@ export default function Admin() {
   return (
     <div>
       {(success) && <p>successfully added your dog!</p>}
+      <h1>Add a Dog</h1>
       <DogForm {...{ dog, setDog, handleSubmit }} />
     </div>
   );
