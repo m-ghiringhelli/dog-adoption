@@ -17,7 +17,7 @@ export default function Home() {
       }
     };
     fetchData();
-  }, []);
+  }, [dogs]);
 
   return (
     <div>

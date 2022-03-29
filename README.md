@@ -31,3 +31,6 @@ II) Supabase
     A) Fetch utils
         1) Fetch all dogs
         2) add dog row
+
+notes for tomorrow:
+add dog currently deletes a dog? hmmmm......

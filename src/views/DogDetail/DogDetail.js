@@ -1,11 +1,18 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 import { fetchDogById, removeDog } from '../../services/dogs';
 
 export default function DogDetail() {
   const id = useParams().id;
   const [loading, setLoading] = useState(true);
   const [dog, setDog] = useState();
+
+  const history = useHistory();
+
+  function handleDelete() {
+    removeDog(id);
+    history.push('../');
+  }
   
   useEffect(() => {
     fetchDogById(id).then((data) => setDog(data));
@@ -21,7 +28,7 @@ export default function DogDetail() {
       <h1>{dog.name}</h1>
       <img src={dog.image}/>
       <p>{dog.bio}</p>
-      <button onClick={removeDog(id)}>Delete</button>
+      <button onClick={handleDelete}>Delete</button>
     </div>
   );
 }
