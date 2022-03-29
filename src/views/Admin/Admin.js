@@ -5,6 +5,7 @@ import { addDog } from '../../services/dogs';
 
 export default function Admin() {
   const [dog, setDog] = useState({ name: '', bio: '', breed: '', age: null, image: '' });
+  const [success, setSuccess] = useState(false);
   const [error, setError] = useState('');
 
   const history = useHistory();
@@ -12,9 +13,11 @@ export default function Admin() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const resp = await addDog(dog);
-      history.push('../');
-      console.log('history');
+      await addDog(dog);
+      setSuccess(true);
+      setTimeout(() => {
+        history.push('../');
+      }, 1000);
     } catch (e) {
       setError('trouble adding your dog');
     }
@@ -22,6 +25,7 @@ export default function Admin() {
 
   return (
     <div>
+      {(success) && <p>successfully added your dog!</p>}
       <DogForm {...{ dog, setDog, handleSubmit }} />
     </div>
   );

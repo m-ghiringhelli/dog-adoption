@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, useHistory } from 'react-router-dom';
+import { useParams, useHistory, Link } from 'react-router-dom';
 import { fetchDogById, removeDog } from '../../services/dogs';
 
 export default function DogDetail() {
@@ -28,6 +28,9 @@ export default function DogDetail() {
       <h1>{dog.name}</h1>
       <img src={dog.image}/>
       <p>{dog.bio}</p>
+      <Link to={`/dogs/${id}/edit`}>
+        <div>Edit dog</div>
+      </Link>
       <button onClick={handleDelete}>Delete</button>
     </div>
   );

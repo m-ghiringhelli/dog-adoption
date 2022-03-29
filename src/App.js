@@ -4,6 +4,7 @@ import Header from './components/Header/Header';
 import Home from './views/Home/Home';
 import DogDetail from './views/DogDetail/DogDetail';
 import Admin from './views/Admin/Admin';
+import EditDog from './views/Admin/EditDog';
 
 function App() {
   return (
@@ -13,6 +14,9 @@ function App() {
         <Switch>
           <Route exact path='/'>
             <Home />
+          </Route>
+          <Route exact path='/dogs/:id/edit'>
+            <EditDog />
           </Route>
           <Route path='/dogs/:id'>
             <DogDetail />
