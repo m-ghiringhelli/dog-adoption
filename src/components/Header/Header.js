@@ -17,6 +17,11 @@ export default function Header() {
             ADD A DOG
           </NavLink>
         </li>
+        <li>
+          <NavLink to='/auth'>
+            SIGN-IN
+          </NavLink>
+        </li>
       </ul>
     </header>
   );
