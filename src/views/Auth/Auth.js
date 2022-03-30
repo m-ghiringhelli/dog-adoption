@@ -31,6 +31,7 @@ export default function Auth({ setCurrentUser }) {
 
   return (
     <div className='auth'>
+      {error && <span>{error}</span>}
       <span className={authType === 'sign-in' && 'selected'} onClick={() => handleClick('sign-in')}>sign-in</span>
       <span className={authType === 'sign-up' && 'selected'} onClick={() => handleClick('sign-up')}>sign-up</span>
       <form className='dogForm' onSubmit={handleSubmit}>
