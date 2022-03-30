@@ -1,7 +1,7 @@
 .header {
     background-color: var(--color3);
     height: 125px;
-    border-bottom: 5px solid black;
+    border-bottom: 5px solid var(--color1);
 }
 
 .headerName {
@@ -36,5 +36,10 @@ li a {
     font-size: 1.6rem;
     font-weight: 700;
     color: var(--color5);
+}
+
+.active {
+    color: white;
+    text-shadow: 0 5px 25px white;
 }
 

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { fetchDogs } from '../../services/dogs';
 import DogCard from '../../components/DogCard/DogCard';
+import './Home.css';
 
 export default function Home() {
   const [dogs, setDogs] = useState([]);
@@ -20,7 +21,7 @@ export default function Home() {
   }, [dogs]);
 
   return (
-    <div>
+    <div className='dogList'>
       {(error) && <p>{error}</p>}
       {dogs.map((dog) => (
         <Link key={dog.id} to={`/dogs/${dog.id}`}>
