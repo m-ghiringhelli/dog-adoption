@@ -4,7 +4,7 @@ import DogForm from '../../components/DogForm/DogForm';
 import { fetchDogById, editDog } from '../../services/dogs';
 import './Admin.css';
 
-export default function EditDog() {
+export default function EditDog({ currentUser }) {
   const id = useParams().id;
   const [dog, setDog] = useState({ name: '', bio: '', breed: '', age: null, image: '' });
   const [loading, setLoading] = useState(true);
@@ -33,6 +33,8 @@ export default function EditDog() {
     }
   };
   
+  !currentUser && history.push('/');
+
   if (loading) return <div>loading...</div>;
 
   return (

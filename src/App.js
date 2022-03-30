@@ -23,7 +23,7 @@ function App() {
             <Home />
           </Route>
           <Route exact path='/dogs/:id/edit'>
-            <EditDog />
+            <EditDog currentUser={currentUser} />
           </Route>
           <Route exact path='/dogs/:id'>
             <DogDetail currentUser={currentUser} />
