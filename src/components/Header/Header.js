@@ -5,15 +5,16 @@ import './Header.css';
 export default function Header() {
   return (
     <header className='header'>
-      <ul>
+      <h1 className='headerName'>adopt-a-dog</h1>
+      <ul className='nav'>
         <li>
           <NavLink exact to='/'>
-            Home
+            VIEW THE DOGS
           </NavLink>
         </li>
         <li>
           <NavLink to='/admin'>
-            Admin
+            ADD A DOG
           </NavLink>
         </li>
       </ul>

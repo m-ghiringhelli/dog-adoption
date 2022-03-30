@@ -1,3 +1,40 @@
 .header {
-    border-bottom: 1px solid black;
+    background-color: var(--color3);
+    height: 125px;
+    border-bottom: 5px solid black;
 }
+
+.headerName {
+    font-family: 'Nanum Gothic';
+    color: var(--color1);
+    font-size: 3rem;
+    padding-top: 20px;
+}
+
+.nav {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 0px;
+}
+
+.nav li {
+    padding: 10px;
+    margin-left: 10px;
+}
+
+.nav li:hover {
+    background-color: rgb(90, 105, 173);
+}
+
+.nav li a:hover {
+    color: white !important;
+}
+
+li a {
+    font-family: 'Nanum Gothic';
+    font-weight: 800;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--color5);
+}
+
