@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { signInUser, signUpUser } from '../../services/users';
 import './Auth.css';
+import '../../components/DogForm/DogForm.css';
 
 export default function Auth({ setCurrentUser }) {
   const [email, setEmail] = useState('');
@@ -29,10 +30,10 @@ export default function Auth({ setCurrentUser }) {
   };
 
   return (
-    <div>
+    <div className='auth'>
       <span className={authType === 'sign-in' && 'selected'} onClick={() => handleClick('sign-in')}>sign-in</span>
       <span className={authType === 'sign-up' && 'selected'} onClick={() => handleClick('sign-up')}>sign-up</span>
-      <form onSubmit={handleSubmit}>
+      <form className='dogForm' onSubmit={handleSubmit}>
         <label>
           email:
           <input type='email' value={email} onChange={(e) => setEmail(e.target.value)}></input>
