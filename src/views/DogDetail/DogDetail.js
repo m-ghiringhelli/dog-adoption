@@ -26,13 +26,13 @@ export default function DogDetail() {
 
   return (
     <div className='dogDetail'>
-      <h1>{dog.name}</h1>
+      <h1>{dog.name.toUpperCase()}</h1>
       <img src={dog.image}/>
       <p>{dog.bio}</p>
       <Link to={`/dogs/${id}/edit`}>
-        <div>Edit dog</div>
+        <div className='editDog'>Edit dog</div>
       </Link>
-      <button onClick={handleDelete}>Delete</button>
+      <button className='deleteDog' onClick={handleDelete}>Delete</button>
     </div>
   );
 }
