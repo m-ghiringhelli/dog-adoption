@@ -32,8 +32,11 @@ export default function EditDog() {
     }
   };
   
+  if (loading) return <div>loading...</div>;
+
   return (
     <div>
+      {(error) && <p>{error}</p>}
       {(success) && <p>successfully edited your dog!</p>}
       <h1>Edit a Dog</h1>
       <DogForm {...{ dog, setDog, handleSubmit }} />

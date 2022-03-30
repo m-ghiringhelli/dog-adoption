@@ -25,6 +25,7 @@ export default function Admin() {
 
   return (
     <div>
+      {(error) && <p>{error}</p>}
       {(success) && <p>successfully added your dog!</p>}
       <h1>Add a Dog</h1>
       <DogForm {...{ dog, setDog, handleSubmit }} />

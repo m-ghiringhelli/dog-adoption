@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useHistory, Link } from 'react-router-dom';
 import { fetchDogById, removeDog } from '../../services/dogs';
+import './DogDetail.css';
 
 export default function DogDetail() {
   const id = useParams().id;
@@ -24,7 +25,7 @@ export default function DogDetail() {
   if (loading) return <div>loading...</div>;
 
   return (
-    <div>
+    <div className='dogDetail'>
       <h1>{dog.name}</h1>
       <img src={dog.image}/>
       <p>{dog.bio}</p>
