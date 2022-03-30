@@ -26,10 +26,10 @@ function App() {
             <EditDog />
           </Route>
           <Route exact path='/dogs/:id'>
-            <DogDetail />
+            <DogDetail currentUser={currentUser} />
           </Route>
           <Route path='/admin'>
-            <Admin />
+            <Admin currentUser={currentUser} />
           </Route>
           <Route path='/auth'>
             <Auth setCurrentUser={setCurrentUser} />

@@ -3,7 +3,7 @@ import { useParams, useHistory, Link } from 'react-router-dom';
 import { fetchDogById, removeDog } from '../../services/dogs';
 import './DogDetail.css';
 
-export default function DogDetail() {
+export default function DogDetail({ currentUser }) {
   const id = useParams().id;
   const [loading, setLoading] = useState(true);
   const [dog, setDog] = useState();
@@ -29,10 +29,15 @@ export default function DogDetail() {
       <h1>{dog.name.toUpperCase()}</h1>
       <img src={dog.image}/>
       <p>{dog.bio}</p>
-      <Link to={`/dogs/${id}/edit`}>
-        <div className='editDog'>Edit dog</div>
-      </Link>
-      <button className='deleteDog' onClick={handleDelete}>Delete</button>
+      {
+        currentUser &&
+        <>
+          <Link to={`/dogs/${id}/edit`}>
+            <div className='editDog'>Edit dog</div>
+          </Link>
+          <button className='deleteDog' onClick={handleDelete}>Delete</button>
+        </>
+      }
     </div>
   );
 }
