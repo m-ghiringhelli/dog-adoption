@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import DogForm from '../../components/DogForm/DogForm';
 import { fetchDogById, editDog } from '../../services/dogs';
+import './Admin.css';
 
 export default function EditDog() {
   const id = useParams().id;
@@ -35,7 +36,7 @@ export default function EditDog() {
   if (loading) return <div>loading...</div>;
 
   return (
-    <div>
+    <div className='formContainer'>
       {(error) && <p>{error}</p>}
       {(success) && <p>successfully edited your dog!</p>}
       <h1>Edit a Dog</h1>
