@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import DogForm from '../../components/DogForm/DogForm';
 import { addDog } from '../../services/dogs';
+import './Admin.css';
 
 export default function Admin() {
   const [dog, setDog] = useState({ name: '', bio: '', breed: '', age: null, image: '' });
@@ -24,7 +25,7 @@ export default function Admin() {
   };
 
   return (
-    <div>
+    <div className='formContainer'>
       {(error) && <p>{error}</p>}
       {(success) && <p>successfully added your dog!</p>}
       <h1>Add a Dog</h1>
