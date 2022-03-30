@@ -12,6 +12,8 @@ import { getUser } from './services/users';
 function App() {
   const [currentUser, setCurrentUser] = useState(getUser());
   
+  if (currentUser) console.log(currentUser);
+
   return (
     <BrowserRouter>
       <div className="App">
