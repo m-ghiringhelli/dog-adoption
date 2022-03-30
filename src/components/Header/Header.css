@@ -17,25 +17,29 @@
     margin-right: 0px;
 }
 
-.nav li {
+.nav li, .link {
     padding: 10px;
     margin-left: 10px;
 }
-
-.nav li:hover {
+ 
+.nav li:hover, .link:hover {
     background-color: rgb(90, 105, 173);
 }
 
-.nav li a:hover {
+.nav li a:hover, .link:hover {
     color: white !important;
 }
 
-li a {
+li a, .link {
     font-family: 'Nanum Gothic';
     font-weight: 800;
     font-size: 1.6rem;
     font-weight: 700;
     color: var(--color5);
+}
+
+.link {
+    cursor: pointer;
 }
 
 .active {

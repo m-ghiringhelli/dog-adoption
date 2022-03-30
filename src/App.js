@@ -17,7 +17,7 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <Header />
+        <Header {...{ currentUser, setCurrentUser }} />
         <Switch>
           <Route exact path='/'>
             <Home />
@@ -32,7 +32,7 @@ function App() {
             <Admin />
           </Route>
           <Route path='/auth'>
-            <Auth />
+            <Auth setCurrentUser={setCurrentUser} />
           </Route>
         </Switch>
       </div>

@@ -19,3 +19,8 @@ export async function signUpUser(email, password) {
   }
   return user;
 }
+
+export async function logout() {
+  const response = await client.auth.signOut();
+  return checkError(response);
+}

@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 import { signInUser, signUpUser } from '../../services/users';
 import './Auth.css';
 
-export default function Auth() {
+export default function Auth({ setCurrentUser }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [authType, setAuthType] = useState('sign-in');
@@ -17,10 +17,11 @@ export default function Auth() {
       authType === 'sign-in' ?
         await signInUser(email, password) :
         await signUpUser(email, password);
-      history.push('/');
     } catch (e) {
       setError(e);
     }
+    setCurrentUser(email);
+    history.push('/');
   };
 
   const handleClick = (button) => {
