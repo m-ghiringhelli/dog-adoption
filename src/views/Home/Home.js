@@ -21,6 +21,7 @@ export default function Home() {
 
   return (
     <div>
+      {(error) && <p>{error}</p>}
       {dogs.map((dog) => (
         <Link key={dog.id} to={`/dogs/${dog.id}`}>
           <DogCard name={dog.name} breed={dog.breed} age={dog.age} image={dog.image} />
