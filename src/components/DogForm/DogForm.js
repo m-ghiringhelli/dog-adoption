@@ -15,7 +15,7 @@ export default function DogForm({ dog, setDog, handleSubmit }) {
         </label>
         <label>
           Image url:
-          <input type='text' value={dog.image} onChange={(e) => updateDog('image', e.target.value)} />
+          <input type='url' value={dog.image} onChange={(e) => updateDog('image', e.target.value)} />
         </label>
         <label>
           Breed:
