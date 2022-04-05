@@ -7,6 +7,7 @@ import './Home.css';
 export default function Home() {
   const [dogs, setDogs] = useState([]);
   const [error, setError] = useState('');
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -18,7 +19,11 @@ export default function Home() {
       }
     };
     fetchData();
+    setTimeout(() => {setLoading(false);}, 1000);
+    
   }, [dogs]);
+
+  if (loading) return <div>loading...</div>;
 
   return (
     <div className='dogList'>
