@@ -1,0 +1,18 @@
+.auth {
+    margin-top: 50px;
+}
+
+.auth span {
+    font-size: 2rem;
+    font-family: 'PT Serif';
+    padding: 10px;
+    margin: 10px;
+    color: var(--color2);
+    cursor: pointer;
+}
+
+.selected {
+    border-bottom: 3px solid var(--color1);
+    background-color: var(--color5);
+    border-radius: 10px 10px 0px 0px;
+}

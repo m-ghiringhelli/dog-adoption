@@ -1,0 +1,10 @@
+.dogList {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: white;
+}
+
+.dogList a {
+    text-decoration: none;
+    color: var(--color1);
+}
